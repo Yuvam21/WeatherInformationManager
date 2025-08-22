@@ -21,5 +21,27 @@ Response contains temperature, humidity, description, etc.
 6. Data is saved into MYSQL , and returned to the client.
 7. If the requested pincode and date are same as already saved in database then it fetches the value from weather_db table.
 8. Pincode and corresponding Latitude and Longitude are saved in a separate table named as Location.
+9. Here is the application.properties file for the project:
+spring.application.name=Weather
+
+server.port=8080
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.datasource.url=jdbc:mysql://localhost:3306/weatherdb?useSSL=false
+
+spring.datasource.username=root
+
+spring.datasource.password=yourpassword
+
+spring.jpa.hibernate.ddl-auto=update
+
+spring.jpa.show-sql=true
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+
+management.endpoints.web.exposure.include=*
+
+management.endpoint.health.show-details=always
 
 
